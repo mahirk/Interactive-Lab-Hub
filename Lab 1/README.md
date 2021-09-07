@@ -138,6 +138,7 @@ I am concerned about how the user would know which specific knife is not sharp e
 ## Part F. Record
 
 \*\***Take a video of your prototyped interaction.**\*\*
+
 [![KnifeVideo](./images/knife_full_video.png)](https://drive.google.com/file/d/1wovlFjO5vB8fTpmZJlcGEsDuWF-sWlmY/view?usp=sharing)
 
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
