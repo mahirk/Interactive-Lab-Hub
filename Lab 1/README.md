@@ -2,11 +2,11 @@
 
 # Staging Interaction
 
-In the original stage production of Peter Pan, Tinker Bell was represented by a darting light created by a small handheld mirror off-stage, reflecting a little circle of light from a powerful lamp. Tinkerbell communicates her presence through this light to the other characters. See more info [here](https://en.wikipedia.org/wiki/Tinker_Bell). 
+In the original stage production of Peter Pan, Tinker Bell was represented by a darting light created by a small handheld mirror off-stage, reflecting a little circle of light from a powerful lamp. Tinkerbell communicates her presence through this light to the other characters. See more info [here](https://en.wikipedia.org/wiki/Tinker_Bell).
 
 There is no actor that plays Tinkerbell--her existence in the play comes from the interactions that the other characters have with her.
 
-For lab this week, we draw on this and other inspirations from theatre to stage interactions with a device where the main mode of display/output for the interactive device you are designing is lighting. You will plot the interaction with a storyboard, and use your computer and a smartphone to experiment with what the interactions will look and feel like. 
+For lab this week, we draw on this and other inspirations from theatre to stage interactions with a device where the main mode of display/output for the interactive device you are designing is lighting. You will plot the interaction with a storyboard, and use your computer and a smartphone to experiment with what the interactions will look and feel like.
 
 _Make sure you read all the instructions and understand the whole of the laboratory activity before starting!_
 
@@ -27,7 +27,7 @@ _Make sure you read all the instructions and understand the whole of the laborat
 5. Computer -- We will use your computer to host a webpage which also features controls.
 6. Found objects and materials -- You will have to costume your phone so that it looks like some other devices. These materials can include doll clothes, a paper lantern, a bottle, human clothes, a pillow case, etc. Be creative!
 
-### Deliverables for this lab are: 
+### Deliverables for this lab are:
 1. Storyboard
 1. Sketches/photos of costumed device
 1. Any reflections you have on the process
@@ -40,13 +40,13 @@ This README.md page in your own repository should be edited to include the work 
 ## Lab Overview
 For this assignment, you are going to:
 
-A) [Plan](#part-a-plan) 
+A) [Plan](#part-a-plan)
 
-B) [Act out the interaction](#part-b-act-out-the-interaction) 
+B) [Act out the interaction](#part-b-act-out-the-interaction)
 
 C) [Prototype the device](#part-c-prototype-the-device)
 
-D) [Wizard the device](#part-d-wizard-the-device) 
+D) [Wizard the device](#part-d-wizard-the-device)
 
 E) [Costume the device](#part-e-costume-the-device)
 
@@ -54,7 +54,7 @@ F) [Record the interaction](#part-f-record)
 
 Labs are due on Mondays. Make sure this page is linked to on your main class hub page.
 
-## Part A. Plan 
+## Part A. Plan
 
 To stage the interaction with your interactive device, think about:
 
@@ -64,49 +64,58 @@ _Players:_ Who is involved in the interaction? Who else is there? If you reflect
 
 _Activity:_ What is happening between the actors?
 
-_Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening the fridge). 
+_Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening the fridge).
 
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 
 \*\***Describe your setting, players, activity and goals here.**\*\*
 
-Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
+The device I propose is a knife block which has a light at the back allowing the user to ensure the knifes are placed in the correct section and also allow the user to know when the knifes have gotten too blunt, allowing them to sharpen it to the ideal level for optimal chopping and use. The idea and design is specifically useful for people who cook a lot. It happens often that the knifes get blunt and would require to be resharpened for optimal usage. The interaction will primarily take place in the kitchen, by chefs or cooks.
 
 \*\***Include a picture of your storyboard here**\*\*
 
-Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
+![Storyboard](./images/int_2.jpeg)
+![Storyboard2](./images/int_1.jpeg)
 
 \*\***Summarize feedback you got here.**\*\*
 
+- Think about what to do if the knife has to remain less sharp
 
 ## Part B. Act out the Interaction
 
-Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
+Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it.
 
 \*\***Are there things that seemed better on paper than acted out?**\*\*
 
+- The light is better when applied to each knife as compared to all of them, allows for better understanding on the part of the user
+- The colors of the lights will have to unique to identify the specific issue
+
 \*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
+
+- Add a light for every knife to signify if the knife is in the correct place and is well-sharpened
 
 
 ## Part C. Prototype the device
 
-You will be using your smartphone as a stand-in for the device you are prototyping. You will use the browser of your smart phone to act as a “light” and use a remote control interface to remotely change the light on that device. 
+You will be using your smartphone as a stand-in for the device you are prototyping. You will use the browser of your smart phone to act as a “light” and use a remote control interface to remotely change the light on that device.
 
 Code for the "Tinkerbelle" tool, and instructions for setting up the server and your phone are [here](https://github.com/FAR-Lab/tinkerbelle).
 
-We invented this tool for this lab! 
+We invented this tool for this lab!
 
 If you run into technical issues with this tool, you can also use a light switch, dimmer, etc. that you can can manually or remotely control.
 
 \*\***Give us feedback on Tinkerbelle.**\*\*
 
+Tinkerbelle was easy to set up, however not all devices have the ability to use it easily, for example older macs cannot setup the python3, which does not allow them to run tinkerbelle.
 
 ## Part D. Wizard the device
-Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
+Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record.
 
 \*\***Include your first attempts at recording the set-up video here.**\*\*
+[![Wizard](./images/wizarding.png)](https://drive.google.com/file/d/1E-EKnpvvbXCuREHwuCWxgO_9NnQxMEbf/view?usp=sharing)
 
-Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
+Now, change the goal within the same setting, and update the interaction with the paper prototype.
 
 \*\***Show the follow-up work here.**\*\*
 
@@ -118,35 +127,40 @@ Only now should you start worrying about what the device should look like. Devel
 Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
 
 \*\***Include sketches of what your device might look like here.**\*\*
+The device itself does not require much costuming. It requires brighter colors to be visible in the day time, and the ability to play sounds. Below is a rough sketch of the knife block.
+![costume](./images/costume.jpeg)
 
-\*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
 
+\*\***What concerns or opportunities are influencing the way you've designed the device to look?**\*\*
+
+I am concerned about how the user would know which specific knife is not sharp enough, which is what influenced the individual lights for each knife. Further
 
 ## Part F. Record
 
 \*\***Take a video of your prototyped interaction.**\*\*
+[![KnifeVideo](./images/knife_full_video.png)](https://drive.google.com/file/d/1wovlFjO5vB8fTpmZJlcGEsDuWF-sWlmY/view?usp=sharing)
 
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
-Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design.
 
 
 
-# Staging Interaction, Part 2 
+# Staging Interaction, Part 2
 
 This describes the second week's work for this lab activity.
 
 
 ## Prep (to be done before Lab on Wednesday)
 
-You will be assigned three partners from another group. Go to their github pages, view their videos, and provide them with reactions, suggestions & feedback: explain to them what you saw happening in their video. Guess the scene and the goals of the character. Ask them about anything that wasn’t clear. 
+You will be assigned three partners from another group. Go to their github pages, view their videos, and provide them with reactions, suggestions & feedback: explain to them what you saw happening in their video. Guess the scene and the goals of the character. Ask them about anything that wasn’t clear.
 
 \*\***Summarize feedback from your partners here.**\*\*
 
 ## Make it your own
 
-Do last week’s assignment again, but this time: 
-1) It doesn’t have to (just) use light, 
+Do last week’s assignment again, but this time:
+1) It doesn’t have to (just) use light,
 2) You can use any modality (e.g., vibration, sound) to prototype the behaviors! Again, be creative!
-3) We will be grading with an emphasis on creativity. 
+3) We will be grading with an emphasis on creativity.
 
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
