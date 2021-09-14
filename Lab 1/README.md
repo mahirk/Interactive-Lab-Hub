@@ -157,6 +157,15 @@ You will be assigned three partners from another group. Go to their github pages
 
 \*\***Summarize feedback from your partners here.**\*\*
 
+**Yuzhen Zhang**
+For the indication of wrong position, maybe one light could indicate that the knife is placed wrong, while the second with a different color can flash at the correct slot. Or it can even start flashing as the player's hand approaches with the knife and indicate the correct location before placing, to prevent failure and cross-contamination between knives. This function is best for small knives but big ones are already confined by physical sizes of the slots.
+The blunt indicator looks really useful. It could be nicer if there is a mechanism that sharpens the blunt knife for you inside the knife block.
+
+**Hongyu Shen**
+I really like that your device is focused on solving a niche problem for a specific group of target audience (i.e. people who cook a lot). You described two functions of this device, and I personally like the second one better.
+
+> I have not received my third feedback.
+
 ## Make it your own
 
 Do last week’s assignment again, but this time:
@@ -165,3 +174,11 @@ Do last week’s assignment again, but this time:
 3) We will be grading with an emphasis on creativity.
 
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
+
+**STORY BOARD**
+![knife_sharp](./images/knife_sharp.jpeg)
+
+![knife_sharp_2](./images/knife_sharp_2.jpeg)
+
+**VIDEO**
+[![FinalVideo](./images/video_2_thumbnail.png)](https://drive.google.com/file/d/1MOQvgFVHSL0rVIsimogc71Rr5ngKMDKS/view?usp=sharing)
