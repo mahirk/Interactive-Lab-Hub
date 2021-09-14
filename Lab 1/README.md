@@ -176,9 +176,9 @@ Do last week’s assignment again, but this time:
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
 
 **STORY BOARD**
-![knife_sharp](./images/knife_sharp.jpeg)
+![knife_sharp](./images/knife_sharp.JPEG)
 
-![knife_sharp_2](./images/knife_sharp_2.jpeg)
+![knife_sharp_2](./images/knife_sharp_2.JPEG)
 
 **VIDEO**
 [![FinalVideo](./images/video_2_thumbnail.png)](https://drive.google.com/file/d/1MOQvgFVHSL0rVIsimogc71Rr5ngKMDKS/view?usp=sharing)
