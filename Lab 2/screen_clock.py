@@ -4,6 +4,30 @@ import digitalio
 import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
+import geocoder
+import requests
+import datetime
+
+g = geocoder.ip('me')
+latitude = str(g.latlng[0])
+longitude = str(g.latlng[1])
+
+url = "https://api.openweathermap.org/data/2.5/onecall"
+
+querystring = {
+    "lat":latitude,
+    "lon":longitude,
+    "exclude":"hourly,minutely",
+    "appid":"33a1154b742cf3f8f1a8e4ecd4341183"
+}
+
+headers = {
+    'cache-control': "no-cache",
+}
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.json())
+weatherData = response.json()
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -54,18 +78,31 @@ x = 0
 # same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+timeSize = 30
+fontTime = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", timeSize)
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
+epochtime = weatherData['current']['sunrise']
+datetime = str(datetime.datetime.fromtimestamp(epochtime))
+print(datetime)
+
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     y = top
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
-    draw.text((x, y), strftime("%m/%d/%Y %H:%M:%S"), font=font, fill="#FFFFFF")
+    dateValue = time.strftime("%m/%d/%Y")
+    timeValue = time.strftime("%H:%M:%S")
+
+    draw.text((x, y), dateValue, font=font, fill="#FFFFFF")
+    y += font.getsize(dateValue)[1] + 14
+    draw.text((x, y), timeValue, font=fontTime, fill="#FFFFFF")
+    y += font.getsize(timeValue)[1] + 14
+    draw.text((x, y), datetime, font=font, fill="#FFFFFF")
 
     # Display image.
     disp.image(image, rotation)
