@@ -39,13 +39,18 @@ def load_weather_data():
 
 def convert_kelvin_to_farenheight(kelvin):
     d_f = (kelvin - 273.15) * 9/5 + 32
-    return "{} °F".format(d_f)
+    return "{:.1f} °F".format(d_f)
 
 def get_image_item_for_display(key):
     imagepng = "{}.png".format(key)
     if imagepng not in imageMap:
-        imageMap[imagepng] = requests.get(imagesUrl.format(key), stream=True).raw
-    return Image.open(imageMap[imagepng])
+        rawPngImage = requests.get(imagesUrl.format(key), stream=True).raw
+        png = Image.open(rawPngImage)
+        png.load() # required for png.split()
+        background = Image.new("RGB", png.size, (0,0,0))
+        background.paste(png, mask=png.split()[3]) # 3 is the alpha channel
+        imageMap[imagepng] = background.rotate(90)
+    return imageMap[imagepng]
 
 
 weatherData = load_weather_data()
@@ -99,24 +104,26 @@ x = 0
 # same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 font = ImageFont.truetype("roboto/Roboto-Regular.ttf", 18)
-timeSize = 30
-fontTime = ImageFont.truetype("roboto/Roboto-Regular.ttf", timeSize)
+fontTime = ImageFont.truetype("roboto/Roboto-Regular.ttf", 32)
+fontWeather = ImageFont.truetype("roboto/Roboto-Regular.ttf", 25)
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
-sunrise_in_epoch = weatherData['current']['sunrise']
+currentWeatherData = weatherData['current']
+sunrise_in_epoch = currentWeatherData['sunrise']
 sunrise_str = "Sunrise: " + get_time_from_epoch(sunrise_in_epoch)
 
-sunset_in_epoch = weatherData['current']['sunset']
+sunset_in_epoch = currentWeatherData['sunset']
 sunset_str = "Sunset: " + get_time_from_epoch(sunset_in_epoch)
 
 print(sunrise_str)
 print(sunset_str)
 
-dateValue = "Date: " + time.strftime("%m/%d/%Y")
+dateValue = "Date: {}".format(time.strftime("%m/%d/%Y"))
+currentTemp = convert_kelvin_to_farenheight(currentWeatherData['temp'])
 
 while True:
     # Draw a black filled box to clear the image.
@@ -124,16 +131,18 @@ while True:
     y = top
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
     timeValue = time.strftime("%H:%M:%S")
-
-    draw.text((x, y), dateValue, font=font, fill="#FFFFFF")
-    y += font.getsize(dateValue)[1] + 14
     draw.text((x, y), timeValue, font=fontTime, fill="#FFFFFF")
-    y += font.getsize(timeValue)[1] + 14
+    y += font.getsize(timeValue)[1] + 28
     draw.text((x, y), sunrise_str, font=font, fill="#FFFFFF")
-    y += font.getsize(sunrise_str)[1] + 14
+    y += font.getsize(sunrise_str)[1]
     draw.text((x, y), sunset_str, font=font, fill="#FFFFFF")
-
+    draw.text(((width/2) + 20, y), currentTemp, font=fontWeather, fill="#FFFFFF")
+    y += font.getsize(sunset_str)[1] + 14
+    draw.text((x, y), dateValue, font=font, fill="#FFFFFF")
     # Display image.
     disp.image(image, rotation)
-    disp.image(get_image_item_for_display(weatherData['current']['weather'][0]['icon']))
+    disp.image(
+        get_image_item_for_display(currentWeatherData['weather'][0]['icon'])
+    )
+
     time.sleep(1)
