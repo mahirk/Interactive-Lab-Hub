@@ -98,4 +98,3 @@ image = image.crop((x, y, x + width, y + height))
 
 # Display image.
 disp.image(image)
-

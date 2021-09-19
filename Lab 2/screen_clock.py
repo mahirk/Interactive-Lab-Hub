@@ -8,6 +8,10 @@ import geocoder
 import requests
 import datetime
 
+imageMap = {}
+
+imagesUrl = "https://openweathermap.org/img/wn/{}.png"
+
 def get_time_from_epoch(val):
     timestamp = datetime.datetime.fromtimestamp(val)
     return str(timestamp.strftime("%H:%M"))
@@ -34,11 +38,15 @@ def load_weather_data():
     return response.json()
 
 def convert_kelvin_to_farenheight(kelvin):
-    d_f = (kelvin − 273.15) × 9/5 + 32
+    d_f = (kelvin - 273.15) * 9/5 + 32
     return "{} °F".format(d_f)
 
+def get_image_item_for_display(key):
+    imagepng = "{}.png".format(key)
+    if imagepng not in imageMap:
+        imageMap[imagepng] = requests.get(imagesUrl.format(key), stream=True).raw
+    return Image.open(imageMap[imagepng])
 
-imagesUrl = "https://openweathermap.org/img/wn/{}.png"
 
 weatherData = load_weather_data()
 
@@ -122,7 +130,10 @@ while True:
     draw.text((x, y), timeValue, font=fontTime, fill="#FFFFFF")
     y += font.getsize(timeValue)[1] + 14
     draw.text((x, y), sunrise_str, font=font, fill="#FFFFFF")
+    y += font.getsize(sunrise_str)[1] + 14
+    draw.text((x, y), sunset_str, font=font, fill="#FFFFFF")
 
     # Display image.
     disp.image(image, rotation)
+    disp.image(get_image_item_for_display(weatherData['current']['weather'][0]['icon']))
     time.sleep(1)
