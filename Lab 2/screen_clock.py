@@ -8,21 +8,20 @@ import geocoder
 import requests
 import datetime
 
-twenty_four_hr_format = "%H:%M"
 tweleve_hour_format = "%I:%M %p"
-
-format_is_tweleve_type = True
-
-def get_time_format():
-    return tweleve_hour_format if format_is_tweleve_type is True else twenty_four_hr_format
 
 imageMap = {}
 
+morning_color = (255, 249, 121)
+afternoon_color = (229, 222, 68)
+evening_color = (239, 129, 14)
+night_color = (5, 55, 82)
+
 imagesUrl = "https://openweathermap.org/img/wn/{}.png"
 
-def get_time_from_epoch(val):
+def get_time_from_epoch(val, fmt = "%H"):
     timestamp = datetime.datetime.fromtimestamp(val)
-    return str(timestamp.strftime(get_time_format()))
+    return timestamp.strftime(fmt)
 
 def load_weather_data():
     g = geocoder.ip('me')
@@ -89,8 +88,8 @@ disp = st7789.ST7789(
 
 # Create blank image for drawing.
 # Make sure to create image with mode 'RGB' for full color.
-height = disp.width  # we swap height/width to rotate it to landscape!
-width = disp.height
+height = disp.width #135 # we swap height/width to rotate it to landscape!
+width = disp.height #240
 image = Image.new("RGB", (width, height))
 rotation = 90
 
@@ -112,7 +111,7 @@ x = 0
 # same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 font = ImageFont.truetype("roboto/Roboto-Regular.ttf", 18)
-fontTime = ImageFont.truetype("roboto/Roboto-Regular.ttf", 32)
+fontTime = ImageFont.truetype("roboto/Roboto-Regular.ttf", 35)
 fontWeather = ImageFont.truetype("roboto/Roboto-Regular.ttf", 21)
 
 # Turn on the backlight
@@ -130,36 +129,68 @@ buttonB.switch_to_input()
 currentWeatherData = weatherData['current']
 sunrise_in_epoch = currentWeatherData['sunrise']
 sunset_in_epoch = currentWeatherData['sunset']
+sunrise_hr = float(get_time_from_epoch(sunrise_in_epoch))
+sunset_hr = float(get_time_from_epoch(sunset_in_epoch))
 
 dateValue = "Date: {}".format(time.strftime("%m/%d/%Y"))
 currentTemp = convert_kelvin_to_farenheight(currentWeatherData['temp'])
 weatherDescription = currentWeatherData['weather'][0]['description']
 
+def get_height_from_time_of_day(val):
+    return height - ((height / 24) * val)
+
+def get_fill_from_time_of_day(val):
+    if val > sunrise_hr and val < 11:
+     return morning_color
+    elif val > 11 and val < 3:
+        return afternoon_color
+    elif val > 3 and val < sunset_hr:
+        return evening_color
+    elif val > sunset_hr:
+        return night_color
+sunrise_str = get_time_from_epoch(sunrise_in_epoch, tweleve_hour_format)
+sunset_str = get_time_from_epoch(sunset_in_epoch, tweleve_hour_format)
+
 while True:
-    if not buttonA.value:
-        print("button_pressed")
-        format_is_tweleve_type = not format_is_tweleve_type
+    # if not buttonA.value:
+    #     print("button_pressed")
+    #     format_is_tweleve_type = not format_is_tweleve_type
 
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     y = top
-    sunrise_str = "Sunrise: " + get_time_from_epoch(sunrise_in_epoch)
-    sunset_str = "Sunset: " + get_time_from_epoch(sunset_in_epoch)
-    #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
-    timeValue = time.strftime(get_time_format())
-    draw.text((x, y), timeValue, font=fontTime, fill="#FFFFFF")
-    y += font.getsize(timeValue)[1] + 28
+    #
+    # #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
+    timeValue = float(time.strftime("%H"))
+    secondsValue = str(time.strftime("%S"))
 
-    draw.text((x, y), sunrise_str, font=font, fill="#FFFFFF")
-    y += font.getsize(sunrise_str)[1]
+    colorHeight = get_height_from_time_of_day(timeValue)
+    color = get_fill_from_time_of_day(timeValue)
 
-    draw.text(((width/2) + 40, y), currentTemp, font=fontWeather, fill="#FFFFFF")
+    sunrise_height = get_height_from_time_of_day(sunrise_hr)
+    sunset_height = get_height_from_time_of_day(sunset_hr)
 
-    draw.text((x, y), sunset_str, font=font, fill="#FFFFFF")
-    y += font.getsize(sunset_str)[1] + 14
-    draw.text((x, bottom-font.getsize(dateValue)[1]-10), dateValue, font=font, fill="#FFFFFF")
+
+    draw.rectangle((0, bottom, width, colorHeight), outline=0, fill=color)
+    draw.line((0, sunrise_height, width,sunrise_height), fill=morning_color)
+    draw.text((0, sunrise_height), sunrise_str, font=font, fill="#FFFFFF")
+    draw.line((0, sunset_height, width, sunset_height), fill=lambda a : a + 10)
+    draw.text((0, sunset_height), sunset_str, font=font, fill="#FFFFFF")
+
+    #
+    draw.text(((width/2)-font.getsize(secondsValue)[0], height/2-font.getsize(secondsValue)[1]), secondsValue, font=fontTime, fill="#FFFFFF")
+    # y +=  + 28
+    #
+    # draw.text((x, y), sunrise_str, font=font, fill="#FFFFFF")
+    # y += font.getsize(sunrise_str)[1]
+    #
+    # draw.text(((width/2) + 40, y), currentTemp, font=fontWeather, fill="#FFFFFF")
+    #
+    # draw.text((x, y), sunset_str, font=font, fill="#FFFFFF")
+    # y += font.getsize(sunset_str)[1] + 14
+    # draw.text((x, bottom-font.getsize(dateValue)[1]-10), dateValue, font=font, fill="#FFFFFF")
     disp.image(image, rotation)
-    disp.image(
-        get_image_item_for_display(currentWeatherData['weather'][0]['icon'])
-    )
+    # disp.image(
+    #     get_image_item_for_display(currentWeatherData['weather'][0]['icon'])
+    # )
     time.sleep(1)
