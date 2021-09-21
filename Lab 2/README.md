@@ -201,7 +201,7 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 ### Weather Changes
 
-![weather](./images/weather.jpg)]
+![weather](./images/weather.jpg)
 
 # Prep for Part 2
 
