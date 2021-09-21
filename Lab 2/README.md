@@ -7,7 +7,7 @@ For our first Pi project, we will pay homage to the [timekeeping devices of old]
 It is worth spending a little time thinking about how you mark time, and what would be useful in a clock of your own design.
 
 **Please indicate anyone you collaborated with on this Lab here.**
-Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design.
 
 ## Prep
 
@@ -21,7 +21,7 @@ If you are in New York, you can come to the campus and pick up your parts. If yo
 ### Set up your Lab 2
 
 1. [Pull changes from the Interactive Lab Hub](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2021Fall/readings/Submitting%20Labs.md#to-pull-lab-updates) so that you have your own copy of Lab 2 on your own lab hub. (This may have to be done again at the start of lab on Thursday.)
-  
+
   If you are organizing your Lab Hub through folder in local machine, go to terminal, cd into your Interactive-Lab-Hub folder and run:
 
   ```
@@ -37,15 +37,15 @@ If you are in New York, you can come to the campus and pick up your parts. If yo
 
 
 ## Overview
-For this assignment, you are going to 
+For this assignment, you are going to
 
 A) [Connect to your Pi](#part-a)  
 
-B) [Try out cli_clock.py](#part-b) 
+B) [Try out cli_clock.py](#part-b)
 
 C) [Set up your RGB display](#part-c)
 
-D) [Try out clock_display_demo](#part-d) 
+D) [Try out clock_display_demo](#part-d)
 
 E) [Modify the code to make the display your own](#part-e)
 
@@ -58,7 +58,7 @@ This readme.md page in your own repository should be edited to include the work 
 
 Labs are due on Mondays. Make sure this page is linked to on your main class hub page.
 
-## Part A. 
+## Part A.
 ### Connect to your Pi
 Just like you did in the lab prep, ssh on to your pi. Once you get there, create a Python environment by typing the following commands.
 
@@ -67,7 +67,7 @@ ssh pi@<your Pi's IP address>
 ...
 pi@ixe00:~ $ virtualenv circuitpython
 pi@ixe00:~ $ source circuitpython/bin/activate
-(circuitpython) pi@ixe00:~ $ 
+(circuitpython) pi@ixe00:~ $
 
 ```
 ### Setup Personal Access Tokens on GitHub
@@ -75,7 +75,7 @@ The support for password authentication of GitHub was removed on August 13, 2021
 
 Following the steps listed [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) from GitHub to set up a token. Depends on your preference, you can set up and select the scopes, or permissions, you would like to grant the token. This token will act as your GitHub password later when you use the terminal on your Pi to sync files with your lab-hub repo.
 
-## Part B. 
+## Part B.
 ### Try out the Command Line Clock
 Clone your own lab-hub repo for this assignment to your Pi and change the directory to Lab 2 folder (remember to replace the following command line with your own GitHub ID):
 
@@ -90,7 +90,7 @@ Install the packages from the requirements.txt and run the example script `cli_c
 
 ```
 (circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 2 $ pip install -r requirements.txt
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 2 $ python cli_clock.py 
+(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 2 $ python cli_clock.py
 02/24/2021 11:20:49
 ```
 
@@ -98,7 +98,7 @@ The terminal should show the time, you can press `ctrl-c` to exit the script.
 If you are unfamiliar with the Python code in `cli_clock.py`, have a look at [this Python refresher](https://hackernoon.com/intermediate-python-refresher-tutorial-project-ideas-and-tips-i28s320p). If you are still concerned, please reach out to the teaching staff!
 
 
-## Part C. 
+## Part C.
 ### Set up your RGB Display
 We have asked you to equip the [Adafruit MiniPiTFT](https://www.adafruit.com/product/4393) on your Pi in the Lab 2 prep already. Here, we will introduce you to the MiniPiTFT and Python scripts on the Pi with more details.
 
@@ -125,7 +125,7 @@ Line up the screen and press it on the headers. The hole in the screen should ma
 
 The display uses a communication protocol called [SPI](https://www.circuitbasics.com/basics-of-the-spi-communication-protocol/) to speak with the raspberry pi. We won't go in depth in this course over how SPI works. The port on the bottom of the display connects to the SDA and SCL pins used for the I2C communication protocol which we will cover later. GPIO (General Purpose Input/Output) pins 23 and 24 are connected to the two buttons on the left. GPIO 22 controls the display backlight.
 
-We can test it by typing 
+We can test it by typing
 ```
 (circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 2 $ python screen_test.py
 ```
@@ -144,7 +144,7 @@ You can look in `image.py` for an example of how to display an image on the scre
 
 
 
-## Part D. 
+## Part D.
 ### Set up the Display Clock Demo
 Work on `screen_clock.py`, try to show the time by filling in the while loop (at the bottom of the script where we noted "TODO" for you). You can use the code in `cli_clock.py` and `stats.py` to figure this out.
 
@@ -187,12 +187,12 @@ After you edit and work on the scripts for Lab 2, the files should be upload bac
 After that, Git will ask you to login to your GitHub account to push the updates online, you will be asked to provide your GitHub user name and password. Remember to use the "Personal Access Tokens" you set up in Part A as the password instead of your account one! Go on your GitHub repo with your laptop, you should be able to see the updated files from your Pi!
 
 
-## Part F. 
+## Part F.
 ## Make a short video of your modified barebones PiClock
 
-\*\*\***Take a video of your PiClock.**\*\*\*
+[![FinalVideo](./images/screen_clock.png)](https://drive.google.com/file/d/1p52yYTIAoEEKKmV5t4Z3V1KLGx9-Vnop/view?usp=sharing)
 
-## Part G. 
+## Part G.
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 
 
@@ -210,6 +210,4 @@ Modify the code from last week's lab to make a new visual interface for your new
 
 As always, make sure you document contributions and ideas from others explicitly in your writeup.
 
-You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
-
-
+You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page.
