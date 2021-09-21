@@ -178,7 +178,7 @@ while True:
 
     draw.rectangle((0, colorHeight, (int(secondsValue)/60) * width, colorHeight + 3), outline="black", fill="red")
 
-    draw.line((0, sunrise_height, width,sunrise_height), fill=morning_color)
+    draw.line((0, sunrise_height, width,sunrise_height), fill=(249, 205, 28))
     draw.ellipse((0, sunrise_height-10, 20, sunrise_height+10), fill=(249, 205, 28), outline =(0,0,0))
 
     draw.line((0, sunset_height, width, sunset_height), fill="#FFFFFF")
