@@ -12,6 +12,7 @@ tweleve_hour_format = "%I:%M %p"
 
 imageMap = {}
 
+twilight_color = (75,0,130)
 morning_color = (255, 249, 121)
 afternoon_color = (229, 222, 68)
 evening_color = (239, 129, 14)
@@ -140,14 +141,17 @@ def get_height_from_time_of_day(val):
     return height - ((height / 24) * val)
 
 def get_fill_from_time_of_day(val):
-    if val > sunrise_hr and val < 11:
-     return morning_color
+    if val < sunrise_hr and val > 3:
+        return twilight_color
+    elif val > sunrise_hr and val < 11:
+        return morning_color
     elif val > 11 and val < 3:
         return afternoon_color
     elif val > 3 and val < sunset_hr:
         return evening_color
     elif val > sunset_hr:
         return night_color
+
 sunrise_str = get_time_from_epoch(sunrise_in_epoch, tweleve_hour_format)
 sunset_str = get_time_from_epoch(sunset_in_epoch, tweleve_hour_format)
 
@@ -159,10 +163,10 @@ while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     y = top
-    #
+
     # #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
     timeValue = float(time.strftime("%H"))
-    secondsValue = str(time.strftime("%S"))
+    secondsValue = time.strftime("%S")
 
     colorHeight = get_height_from_time_of_day(timeValue)
     color = get_fill_from_time_of_day(timeValue)
@@ -170,27 +174,16 @@ while True:
     sunrise_height = get_height_from_time_of_day(sunrise_hr)
     sunset_height = get_height_from_time_of_day(sunset_hr)
 
-
     draw.rectangle((0, bottom, width, colorHeight), outline=0, fill=color)
-    draw.line((0, sunrise_height, width,sunrise_height), fill=morning_color)
-    draw.text((0, sunrise_height), sunrise_str, font=font, fill="#FFFFFF")
-    draw.line((0, sunset_height, width, sunset_height), fill=lambda a : a + 10)
-    draw.text((0, sunset_height), sunset_str, font=font, fill="#FFFFFF")
 
-    #
-    draw.text(((width/2)-font.getsize(secondsValue)[0], height/2-font.getsize(secondsValue)[1]), secondsValue, font=fontTime, fill="#FFFFFF")
-    # y +=  + 28
-    #
-    # draw.text((x, y), sunrise_str, font=font, fill="#FFFFFF")
-    # y += font.getsize(sunrise_str)[1]
-    #
-    # draw.text(((width/2) + 40, y), currentTemp, font=fontWeather, fill="#FFFFFF")
-    #
-    # draw.text((x, y), sunset_str, font=font, fill="#FFFFFF")
-    # y += font.getsize(sunset_str)[1] + 14
-    # draw.text((x, bottom-font.getsize(dateValue)[1]-10), dateValue, font=font, fill="#FFFFFF")
+    draw.rectangle((0, colorHeight, (int(secondsValue)/60) * width, colorHeight + 3), outline="black", fill="red")
+
+    draw.line((0, sunrise_height, width,sunrise_height), fill=morning_color)
+    draw.ellipse((0, sunrise_height-10, 20, sunrise_height+10), fill=(249, 205, 28), outline =(0,0,0))
+
+    draw.line((0, sunset_height, width, sunset_height), fill="#FFFFFF")
+    draw.ellipse((0, sunset_height-10, 20, sunset_height+10), fill = (255, 255, 255), outline =(0,0,0))
+
     disp.image(image, rotation)
-    # disp.image(
-    #     get_image_item_for_display(currentWeatherData['weather'][0]['icon'])
-    # )
+
     time.sleep(1)
