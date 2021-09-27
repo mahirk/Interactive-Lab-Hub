@@ -2,3 +2,4 @@
 *.tflite
 *.scorer
 venv
+.idea/
