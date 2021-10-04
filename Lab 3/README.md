@@ -111,9 +111,16 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 \*\***Post your storyboard and diagram here.**\*\*
 
+![Storyboard](assests/storyboard.jpg)
+
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
 
 \*\***Please describe and document your process.**\*\*
+
+I wrote down my expectations of the Pi first as ideas on a piece of paper, things such as "Asking the name", "providing data", "On boot greeting". This allowed
+me to get an understanding of the possible interactions the Pi would have. I then used those word associations to help develop a series of possible dialogues.
+For the sake of acting out and wizarding, I picked one which would be simpler in nature.
+
 
 ### Acting out the dialogue
 
@@ -121,10 +128,20 @@ Find a partner, and *without sharing the script with your partner* try out the d
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
 
+[![Acting](assests/acting_3.png)](https://drive.google.com/file/d/1peJlqjs357qqxdlhrqT8lxhOKcNYQnvg/view?usp=sharing)
+
+I started by being quiet and waiting for some sort of an input. When I recieved none, I hinted the user. I thought that might have been an issue when designing the storyboard
+but had not accounted for it in the dialogues, that was the first difference.
+The second difference is how I expected the name to be said by the partner instead of saying "ARNI" they said "My name is Arni" which is something I will have to account for.
+
 ### Wizarding with the Pi (optional)
 In the [demo directory](./demo), you will find an example Wizard of Oz project. In that project, you can see how audio and sensor data is streamed from the Pi to a wizard controller that runs in the browser.  You may use this demo code as a template. By running the `app.py` script, you can see how audio and sensor data (Adafruit MPU-6050 6-DoF Accel and Gyro Sensor) is streamed from the Pi to a wizard controller that runs in the browser `http://<YouPiIPAddress>:5000`. You can control what the system says from the controller as well!
 
 \*\***Describe if the dialogue seemed different than what you imagined, or when acted out, when it was wizarded, and how.**\*\*
+[![Wizarding](assests/wizarding_3.png)](https://drive.google.com/file/d/1AD9Pi3Rz3HSxk9IdU4xRJz3URdsrmf4u/view?usp=sharing)
+
+Wizarding was a bit more complicated than either of the above activities. Specifically when acting out the dialogue my partner was able to play to my body language. Though they understood
+what the dialogues were since they acted it out earlier, it was different as the Pi provides no clues as far as the next dialogue.
 
 # Lab 3 Part 2
 
