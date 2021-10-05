@@ -199,6 +199,8 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 ## Part F.
 ## Make a short video of your modified barebones PiClock
+The below shows the  time in terms of how much the screen has been filled with color.
+The color changes based on the time of the day and includes a seconds bar as a red. This also includes a sunrise and sunset indicator on the screen.
 
 [![FinalVideo](./images/screen_clock.png)](https://drive.google.com/file/d/1p52yYTIAoEEKKmV5t4Z3V1KLGx9-Vnop/view?usp=sharing)
 
@@ -207,9 +209,13 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 ### Todo List
 
+This is a device which will allow the user to see what tasks they have in the day, based on the time and are able to mark them off by clicking the individual buttons on the screen.
+
 ![todo_list](./images/todo_list.jpg)
 
 ### Weather Changes
+
+When the user clicks a button on their pi, there will be an overlay on the screen which will give the current weather setting for the day.
 
 ![weather](./images/weather.jpg)
 
@@ -229,5 +235,12 @@ Modify the code from last week's lab to make a new visual interface for your new
 As always, make sure you document contributions and ideas from others explicitly in your writeup.
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page.
+
+### Documentation
+The below video demos an app which allows the user to see other details about the day, with a time indicator:
+1. The main view shows the current tide, and location of the sun/moon i.e. the celestial body
+2. Gesturing over the pressure sensor will show the user the current weather and the sky using an image of the current celestial body.
+3. Clicking the top button will show the day as an indicator of how much the screen is colored (similar to part 1) including the sun rise and sun set indicators.
+4. Clicking the bottom button will bring the user bac to the original sea tide view.
 
 [![thumbnail](images/clock.png)](https://drive.google.com/file/d/1DXnly-EbehZQtRuHadmmd_dOqjh57Rq1/view?usp=sharing)
