@@ -151,6 +151,18 @@ what the dialogues were since they acted it out earlier, it was different as the
 
 For Part 2, you will redesign the interaction with the speech-enabled device using the data collected, as well as feedback from part 1.
 
+## Feedback
+
+Yehao Zhang
+> Clear illustration of a smart assistant. I found it funny to hear the 'device" saying "Hello 'my name is Arni", a nice catch of what might actually happen! was wondering if the device could perform more tasks, like being able to respond if the user asked what is the upcoming event.
+
+Yuzhen Zhang
+> The acting and the wizarding of the device are interesting, especially when the 'device" repeated "My name is Arni" instead of "Arni". am imagining this device to be able to record todo reminders for multiple people and tell them their corresponding tasks after knowing their names. So it could be a device for the whole family, or even a public device placed at the entrance of Bloomberg and storing and reminding the tasks for all students. Also, when talking with the device, there could be some feedback probably visually through the screen, to let the user know if the device is still listening or it has finished talking and is waiting for new input.
+
+Gazi Inkiyad
+> I liked how you caught "My name is Arni" part. Also you could probably have another feature that allows the user to add and delete events from their daily agendas.
+
+
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
