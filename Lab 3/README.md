@@ -115,8 +115,8 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 \*\***Post your storyboard and diagram here.**\*\*
 
-The chatter box below will allow the user to first set up the machine by asking a few basic questions. Once it has asked that information, it is able
-to retrieve information about the user. 
+The chatter box below will allow the user to first set up the machine by asking a few basic questions. Once it has asked that information, it listens for the input from the user. It is able
+to retrieve information about the user using the name and cann assist the user in making certain changes to their schedule. 
 
 ![Storyboard](assests/storyboard.jpg)
 
@@ -177,9 +177,19 @@ Gazi Inkiyad
 The system should:
 * use the Raspberry Pi 
 * use one or more sensors
-* require participants to speak to it. 
+* require participants to speak to it.
 
 *Document how the system works*
+
+Taking advice of the feedback from the peer reviews, I have added in an additional feature which the gesture and touch can be used to control the various tasks and adjust them.
+
+The chatter box starts up and asks for the users name. It takes the value of the name at face-value, and uses that to 
+help derive what tasks are available for the user. Once it has the name, it reacts in the following manner:
+1. It tells the user how many tasks they have for the day and prompts the user for an option, hinting at them what they should do.
+2. Based on the button which is pressed, the task is read out.
+3. Once the task is read out, the device will prompt for gesture.
+4. Swiping it left or right will delete it.
+5. Up or down gesture adds a task can be added there. The chatterbox will ask for a task name and add it.
 
 *Include videos or screencaptures of both the system and the controller.*
 
@@ -189,14 +199,12 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+The system included a check for when the user is no longer
 
 ### What worked well about the controller and what didn't?
-
 \*\**your answer here*\*\*
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-
 \*\**your answer here*\*\*
 
 
