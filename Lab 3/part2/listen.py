@@ -1,6 +1,6 @@
 import deepspeech
 import numpy as np
-import os
+import queue, os, os.path
 import pyaudio
 from sys import byteorder
 from array import array
@@ -9,14 +9,17 @@ import faulthandler
 import gtts
 from pydub import AudioSegment
 from pydub.playback import play
-
+import webrtcvad
+from scipy import signal
+from io import BytesIO
+from pydub.utils import which, mediainfo
+AudioSegment.converter = which("ffmpeg")
 
 # Make DeepSpeech Model
 model = deepspeech.Model('deepspeech-0.9.3-models.tflite')
 model.enableExternalScorer('deepspeech-0.9.3-models.scorer')
 
 THRESHOLD = 750
-
 
 def is_silent(data_chunk):
     """Returns 'True' if below the 'silent' threshold"""
@@ -32,6 +35,7 @@ class AudioListener(object):
         self.num_silent = 0
         self.snd_started = False
         self.end_recording = False
+        self.buffer_queue = []
 
     def set_end_record(self, silent):
         if silent and self.snd_started:
@@ -42,8 +46,14 @@ class AudioListener(object):
             self.snd_started = False
             self.num_silent = 0
 
-        if self.snd_started and self.num_silent > 30:
+        if self.snd_started and self.num_silent > 50:
             self.end_recording = True
+
+    def get_frames(self):
+        return self.buffer_queue
+
+    def add_recording(self, data):
+        self.buffer_queue.append(data)
 
     def get_end_record(self):
         return self.end_recording
@@ -53,6 +63,7 @@ def playsound(text):
     tts = gtts.gTTS(text, lang="en")
     mp3_fp = BytesIO()
     tts.write_to_fp(mp3_fp)
+    mp3_fp.seek(0)
     song = AudioSegment.from_file(mp3_fp, format="mp3")
     play(song)
 
@@ -67,11 +78,8 @@ def get_audio_from_client():
     # Encapsulate DeepSpeech audio feeding into a callback for PyAudio
     def process_audio(in_data, frame_count, time_info, status):
         data16 = np.frombuffer(in_data, dtype=np.int16)
-        context.feedAudioContent(data16)
-
+        capture.add_recording(data16)
         silent = is_silent(data16)
-        text = context.intermediateDecode()
-        print('Interim text = {}'.format(text))
         capture.set_end_record(silent)
         return (in_data, pyaudio.paContinue)
 
@@ -92,22 +100,20 @@ def get_audio_from_client():
     while stream.is_active() and not capture.get_end_record():
         time.sleep(0.1)
 
-    print('here1')
-    stream.stop_stream()
-    print('here2')
-    stream.close()
-    print('here3')
-    audio.terminate()
-    print('here4')
-    faulthandler.enable()
+    for frame in capture.get_frames():
+        context.feedAudioContent(frame)
 
+    stream.stop_stream()
+    stream.close()
+    audio.terminate()
     text = context.finishStream()
     print('Final text = {}'.format(text))
     return text
 
 
 while True:
+    playsound("Hi what is your name?")
     detail = get_audio_from_client()
-    print(detail)
-    time.sleep(10)
+    playsound("Hello, {}! You have 5 new appointments today".format(detail))
+    time.sleep(5)
     print('Restarting')

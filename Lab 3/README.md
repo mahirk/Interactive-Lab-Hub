@@ -115,6 +115,9 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 \*\***Post your storyboard and diagram here.**\*\*
 
+The chatter box below will allow the user to first set up the machine by asking a few basic questions. Once it has asked that information, it is able
+to retrieve information about the user. 
+
 ![Storyboard](assests/storyboard.jpg)
 
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
