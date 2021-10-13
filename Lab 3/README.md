@@ -181,6 +181,8 @@ The system should:
 
 *Document how the system works*
 
+![Storyboard](assests/new_storyboard.jpeg)
+
 Taking advice of the feedback from the peer reviews, I have added in an additional feature which the gesture and touch can be used to control the various tasks and adjust them.
 
 The chatter box starts up and asks for the users name. It takes the value of the name at face-value, and uses that to 
