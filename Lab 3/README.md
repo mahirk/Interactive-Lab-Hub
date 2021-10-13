@@ -192,6 +192,7 @@ help derive what tasks are available for the user. Once it has the name, it reac
 5. Up or down gesture adds a task can be added there. The chatterbox will ask for a task name and add it.
 
 *Include videos or screencaptures of both the system and the controller.*
+[![Recording](assests/recording_3.png)](https://drive.google.com/file/d/1topAYLqEInPOH3syl1uypY76l0DZw79g/view?usp=sharing)
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
@@ -201,16 +202,30 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-The system included a check for when the user is no longer
+Worked Well:
+1. The dialogue presented the user with good hints on what to do. The swiping to delete was intuitive.
+2. The sensor was easy to understand from the users' perspective, they were able to recognize where to press or where to swipe
+
+Did not work well:
+1. The users were confused when it did not give feedback on the task.
+
 
 ### What worked well about the controller and what didn't?
-\*\**your answer here*\*\*
+Worked Well:
+1. The voice recognition allowed for a good interaction with the user
+
+Did Not Work well:
+1. The sensor for the task picker proved to be a lot harder than expected, using unknown values. This would sometimes send the system in a loop 
+2. If the voice recognizer took too long, the user would get restless and say more on the strings, causing a very long string being recognized by deepspeech
+
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-\*\**your answer here*\*\*
-
+The woz interactions were a good insight into what the user would expect as conversation, and allowed to set up a system
+which keeps common responses in mind (for example how to respond to a question). The WoZ interactions also helped with the set up of
+the microphone and the device to help connect the various elements of the device. 
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
-
-\*\**your answer here*\*\*
+I can collect the common actions the users perform for example the order in which they press buttons based on the number of tasks and also how they swipe on the device.
+Further it will be useful to collect data about how the users speak to the Pi, and difference in time between them speaking the voice recognition accepting it allowing for smoother interaction.
+Finally, I would like to add a camera, that can further help the logging in process for the user and would allow special functions.
 
