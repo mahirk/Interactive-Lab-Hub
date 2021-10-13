@@ -194,6 +194,8 @@ help derive what tasks are available for the user. Once it has the name, it reac
 5. Up or down gesture adds a task can be added there. The chatterbox will ask for a task name and add it.
 
 *Include videos or screencaptures of both the system and the controller.*
+
+Please click to open video:
 [![Recording](assests/recording_3.png)](https://drive.google.com/file/d/1topAYLqEInPOH3syl1uypY76l0DZw79g/view?usp=sharing)
 
 ## Test the system
