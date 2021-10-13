@@ -31,7 +31,7 @@ sensor.enable_gesture = True
 sensor.enable_proximity = True
 # sensor.rotation = 270 # 270 for CLUE
 
-THRESHOLD = 750
+THRESHOLD = 850
 
 def is_silent(data_chunk):
     """Returns 'True' if below the 'silent' threshold"""
@@ -89,7 +89,7 @@ class AudioListener(object):
             self.snd_started = False
             self.num_silent = 0
 
-        if self.snd_started and self.num_silent > 35:
+        if self.snd_started and self.num_silent > 40:
             self.end_recording = True
 
     def get_frames(self):
@@ -222,7 +222,7 @@ if __name__ == "__main__":
     playsound("Please tap a button on the sensor to open your tasks")
     while True:
         task_selected = get_task_from_selection(user)
-        if task_selected:
+        if task_selected is not False:
             action = get_gesture()
             perform_action_from_gesture(user, action, task_selected)
         playsound("Waiting for input on the sensor.")
