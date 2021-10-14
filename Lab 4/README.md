@@ -173,11 +173,11 @@ You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_VL53L
 
 Usually, sensors need to positioned in specific locations or orientations to make them useful for their application. Now that you've tried a bunch of the sensors, pick one that you would like to use, and an application where you use the output of that sensor for an interaction. For example, you can use a distance sensor to measure someone's height if you position it overhead and get them to stand under it.
 
-**\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
+**Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful**
 
-**\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
+**What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?**
 
-**\*\*\*Pick one of these designs to prototype.\*\*\***
+**Pick one of these designs to prototype.**
 
 
 ### Part D
@@ -218,20 +218,20 @@ Here is an example:
 
 Think about how you want to present the information about what your sensor is sensing! Design a paper display for your project that communicates the state of the Pi and a sensor. Ideally you should design it so that you can slide the Pi out to work on the circuit or programming, and then slide it back in and reattach a few wires to be back in operation.
  
-**\*\*\*Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.\*\*\***
+**Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.**
 
-**\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
+**What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?**
 
-**\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
+**Pick one of these display designs to integrate into your prototype.**
 
-**\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+**Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
 Build a cardbord prototype of your design.
 
-**\*\*\*Document your rough prototype.\*\*\***
+**Document your rough prototype.**
 
 
-LAB PART 2
+## LAB PART 2
 
 ### Part 2
 
