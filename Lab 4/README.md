@@ -174,11 +174,47 @@ You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_VL53L
 Usually, sensors need to positioned in specific locations or orientations to make them useful for their application. Now that you've tried a bunch of the sensors, pick one that you would like to use, and an application where you use the output of that sensor for an interaction. For example, you can use a distance sensor to measure someone's height if you position it overhead and get them to stand under it.
 
 **Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful**
+I chose to use the distance sensor because it can provide a wide range of motion and view and can also be updated, so it can measure specifically what is required. 
+Please note: These are all x-ray sketches i.e. the show the placement of the internals in the device
 
-**What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?**
+### Security Motion Sensor
+This device places the distance sensor at a 25-degree angle, and connects to the pi, with a small length to allow for the sensor to cover more room, 
+placing the sensor at 25 degrees will allow for a larger field of view. Combined with the 25 degrees that the distance sensor is able to cover it will 
+allow for sensing more movement.
+
+### Overhead Door opener
+The distance sensor is at a closer, 45-degree angle, which focuses more on the people walking through the door itself, and won't trigger when people walk 
+by the door generally. The sensor could also be at a closer 60 degree measure which will be more specific to the door. 
+
+![](images/sketches_1.jpeg)
+
+### Carpenters assistant
+The carpenters assistant will provide a method for folks who want an accurate distance measure while conducting a project. The distance sensor will be
+placed on one side and a screen will allow the user to see what the distance is from the wall its facing. Multiple sensors can enhance this to show 
+distances relative to multiple walls.
+
+### Car Parking assistant 
+The car parking assistant will show a user when they are too close to a wall so that they do not hit the car against the wall. The sensor will be placed
+at the bottom, and have a wire which will line the height of the wall presenting a light at the height of the car which turns red when the car is
+too close. 
+
+![](images/sketches_2.jpeg)
+
+### Walking assistance for the blind
+The walking assistance for the blind features a sensor perched on top of eyeglasses which will allow for someone who is visually impaired to "navigate" the space
+with the help of a distance measure based on where they look. 
+
+![](images/sketches_3_walk.jpeg)
+ 
+
+**What are some things these sketches raise as questions? What do you need to physically prototype to understand how to answer those questions?**
+1. How do we display the sensor so that it is hidden, but it does not affect the distance measurement. This would need to be prototyped using various materials like glass and plastic.
+2. For the security motion sensor, understanding how sensitive it is will depend on the angle, and ensuring its placed correct is important 
+3. For the Carpenters Assistant, how do we tell the user which side the sensor is on, while masking it? Would need to prototype the device to place the sensor, on the sides while leaving space for the screen.
+4. The walking assistance for the blind will require a manner show haptic feedback to the user, and allow the user to input their destination.
 
 **Pick one of these designs to prototype.**
-
+I decided to choose the walking assistance for the blind.
 
 ### Part D
 ### Physical considerations for displaying information and housing parts
@@ -220,13 +256,13 @@ Think about how you want to present the information about what your sensor is se
  
 **Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.**
 
-**What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?**
+**What are some things these sketches raise as questions? What do you need to physically prototype to understand how to answer those questions?**
 
 **Pick one of these display designs to integrate into your prototype.**
 
 **Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
-Build a cardbord prototype of your design.
+Build a cardboard prototype of your design.
 
 **Document your rough prototype.**
 
