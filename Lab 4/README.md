@@ -174,6 +174,7 @@ You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_VL53L
 Usually, sensors need to positioned in specific locations or orientations to make them useful for their application. Now that you've tried a bunch of the sensors, pick one that you would like to use, and an application where you use the output of that sensor for an interaction. For example, you can use a distance sensor to measure someone's height if you position it overhead and get them to stand under it.
 
 **Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful**
+
 I chose to use the distance sensor because it can provide a wide range of motion and view and can also be updated, so it can measure specifically what is required. 
 Please note: These are all x-ray sketches i.e. the show the placement of the internals in the device
 
@@ -208,13 +209,15 @@ with the help of a distance measure based on where they look.
  
 
 **What are some things these sketches raise as questions? What do you need to physically prototype to understand how to answer those questions?**
+
 1. How do we display the sensor so that it is hidden, but it does not affect the distance measurement. This would need to be prototyped using various materials like glass and plastic.
 2. For the security motion sensor, understanding how sensitive it is will depend on the angle, and ensuring its placed correct is important 
 3. For the Carpenters Assistant, how do we tell the user which side the sensor is on, while masking it? Would need to prototype the device to place the sensor, on the sides while leaving space for the screen.
 4. The walking assistance for the blind will require a manner show haptic feedback to the user, and allow the user to input their destination.
 
 **Pick one of these designs to prototype.**
-I decided to choose the walking assistance for the blind.
+
+I decided to choose the Car Parking assistant.
 
 ### Part D
 ### Physical considerations for displaying information and housing parts
@@ -256,11 +259,47 @@ Think about how you want to present the information about what your sensor is se
  
 **Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.**
 
+The device features a screen which shows the distance and a rotary encoder to help set the value at which a car should be told to stop before the hit the wall.
+
+- The encoder will be turned, and the button will help "set" the value when the user believes its a good point
+- The screen will show the value to set it and the current distance
+- The light on the top part of the device will be used to show when the distance or car is too close. 
+
+1. On the light
+> Here the light has a screen attached to it, to visually represent the distance from the sensor the car is and can show when to stop
+2. At the sensor
+> The display is at the sensor along with the encoder and the button, its only visible during setup
+
+3. External to the device
+> Similar to the other displays, however here the display is kept separate from the main sensor
+
+4. As the main display
+> The light is completely removed, and replaced by the screen. The rotary encoder and button are on the main device
+
+
+![](images/car_display1.jpeg)
+
+5. Below the rotary and button
+
+![](images/car_display2.jpeg)
+
+
 **What are some things these sketches raise as questions? What do you need to physically prototype to understand how to answer those questions?**
+
+1. How would the display and the encoder interact? We would need to place the encoder and display in a manner that allows the user to know they are coupled
+2. Would need to see how if the light and the screen would cause a collision as far as how bright they are
+3. I would also like to prorotype the wire extenstion between the screen and the pi to make sure they are easy to manage.
 
 **Pick one of these display designs to integrate into your prototype.**
 
+I am choosing the option 1: "On the light"
+
 **Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+
+The design is a little busy, however it allows a good dissociation between the screen, button encoder and light which are all connected, and separates it from the distance sensor,
+which is a separate part of the device. This will allow the user to be able to understand how to interact with the device better.
+Additionally, keeping the button in a location where the user can read will provide an additional measure to the user and allow them to 
+read the distance from afar. The light will be a good visual representation to the user since its visible at greater distances than the screen.
 
 Build a cardboard prototype of your design.
 
