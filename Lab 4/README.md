@@ -263,7 +263,8 @@ The device features a screen which shows the distance and a rotary encoder to he
 
 - The encoder will be turned, and the button will help "set" the value when the user believes its a good point
 - The screen will show the value to set it and the current distance
-- The light on the top part of the device will be used to show when the distance or car is too close. 
+- The light on the top part of the device will be used to show when the distance or car is too close.
+- Note: As in the Part 1.a, the brown background with a red dot is a light. The button has been labeled separately.
 
 1. On the light
 > Here the light has a screen attached to it, to visually represent the distance from the sensor the car is and can show when to stop
@@ -288,7 +289,8 @@ The device features a screen which shows the distance and a rotary encoder to he
 
 1. How would the display and the encoder interact? We would need to place the encoder and display in a manner that allows the user to know they are coupled
 2. Would need to see how if the light and the screen would cause a collision as far as how bright they are
-3. I would also like to prorotype the wire extenstion between the screen and the pi to make sure they are easy to manage.
+3. I would also like to prototype the wire extenstion between the screen and the pi to make sure they are easy to manage.
+4. How would the screen, encoder etc stay in place at the vertical position
 
 **Pick one of these display designs to integrate into your prototype.**
 
@@ -299,11 +301,14 @@ I am choosing the option 1: "On the light"
 The design is a little busy, however it allows a good dissociation between the screen, button encoder and light which are all connected, and separates it from the distance sensor,
 which is a separate part of the device. This will allow the user to be able to understand how to interact with the device better.
 Additionally, keeping the button in a location where the user can read will provide an additional measure to the user and allow them to 
-read the distance from afar. The light will be a good visual representation to the user since its visible at greater distances than the screen.
+read the distance from afar. The light will be a good visual representation to the user since its visible at greater distances than the screen. 
+I chose to make one modification to it, I added the button to confirm the distance to the
+right of the display to make it easier to understand, which is not represented above.
 
-Build a cardboard prototype of your design.
+_**Build a cardboard prototype of your design.**_
 
 **Document your rough prototype.**
+
 
 
 ## LAB PART 2
