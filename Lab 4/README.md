@@ -320,7 +320,6 @@ I then used pieces of cardboard and tape to attach the sensors to the base plate
 #### Backplate and placements
 Following that I attached a backplate with the cardboard and added a little handle to be able to 
 open the back and access it.
-![](images/PXL_20211018_154111046.jpg)
 ![](images/PXL_20211018_154112538.jpg)
 [![](images/video_2.png)](https://drive.google.com/file/d/1237sgJMCkc0zWpNPhDB_loeDUodzPtPp/view)
 
