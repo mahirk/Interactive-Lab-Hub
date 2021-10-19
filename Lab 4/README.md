@@ -309,6 +309,39 @@ _**Build a cardboard prototype of your design.**_
 
 **Document your rough prototype.**
 
+#### Display and Encoder
+I started with a round cardboard and cut holes for the button, light, encoder and the OLED.
+I then used pieces of cardboard and tape to attach the sensors to the base plate.
+![](images/PXL_20211018_145651498.jpg)
+![](images/PXL_20211018_145640472.jpg)
+![](images/PXL_20211018_150613882.jpg)
+![](videos/PXL_20211018_150616090.mp4)
+
+#### Backplate and placements
+Following that I attached a backplate with the cardboard and added a little handle to be able to 
+open the back and access it.
+![](images/PXL_20211018_154111046.jpg)
+![](images/PXL_20211018_154112538.jpg)
+![](videos/PXL_20211018_154054345.mp4)
+
+#### Sensor and Pi Hub
+Next I worked on the base with the sensor and the Pi itself, here I added the distance sensor, and the pi. I made a whole for the incoming wire, and kept an opening
+at the bottom to allow the pi to slide in and how for easy access.
+![](images/PXL_20211019_013050721.jpg)
+![](images/PXL_20211019_014023566.jpg)
+![](images/PXL_20211019_021229845.jpg)
+![](images/PXL_20211019_014014986.jpg)
+![](videos/PXL_20211019_021231419.mp4)
+![](videos/PXL_20211019_021312691.mp4)
+
+### Final Product
+Below is the final product
+![](images/PXL_20211019_015235559.jpg)
+![](images/PXL_20211019_021611813.jpg)
+![](images/PXL_20211019_021621865.jpg)
+
+
+
 
 
 ## LAB PART 2
