@@ -315,14 +315,14 @@ I then used pieces of cardboard and tape to attach the sensors to the base plate
 ![](images/PXL_20211018_145651498.jpg)
 ![](images/PXL_20211018_145640472.jpg)
 ![](images/PXL_20211018_150613882.jpg)
-![](videos/PXL_20211018_150616090.mp4)
+[![](images/video_1.png)](https://drive.google.com/file/d/1GRWkgSN0hoNAJsBb61bcGF6NMnaBYDFq/view?usp=sharing)
 
 #### Backplate and placements
 Following that I attached a backplate with the cardboard and added a little handle to be able to 
 open the back and access it.
 ![](images/PXL_20211018_154111046.jpg)
 ![](images/PXL_20211018_154112538.jpg)
-![](videos/PXL_20211018_154054345.mp4)
+[![](images/video_2.png)](https://drive.google.com/file/d/1Z_0p2y50O4cIl_66lQkl6FzP5T1ZyUp5/view?usp=sharing)
 
 #### Sensor and Pi Hub
 Next I worked on the base with the sensor and the Pi itself, here I added the distance sensor, and the pi. I made a whole for the incoming wire, and kept an opening
@@ -331,8 +331,9 @@ at the bottom to allow the pi to slide in and how for easy access.
 ![](images/PXL_20211019_014023566.jpg)
 ![](images/PXL_20211019_021229845.jpg)
 ![](images/PXL_20211019_014014986.jpg)
-![](videos/PXL_20211019_021231419.mp4)
-![](videos/PXL_20211019_021312691.mp4)
+[![](images/video_3.png)](https://drive.google.com/file/d/1237sgJMCkc0zWpNPhDB_loeDUodzPtPp/view?usp=sharing)
+[![](images/video_4.png)](https://drive.google.com/file/d/1GRWkgSN0hoNAJsBb61bcGF6NMnaBYDFq/view?usp=sharing)
+
 
 ### Final Product
 Below is the final product
