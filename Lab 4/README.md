@@ -379,6 +379,13 @@ You can then call whichever control you like rather than setting a fixed value f
 
 We encourage you to try using these controls, **while** paying particular attention to how the interaction changes depending on the position of the controls. For example, if you have your servo rotating a screen (or a piece of cardboard) from one position to another, what changes about the interaction if the control is on the same side of the screen, or the opposite side of the screen? Trying and retrying different configurations generally helps reveal what a design choice changes about the interaction -- _make sure to document what you tried_!
 
+### Feedback
+
+>The ideas all look great and the car parking assistant is useful. It is really interesting to see the physical build of the device and how the back side of it is also designed with a opening mechanism. As a user I am a bit confused about what the rotary encoder and the buttons control just by looking at the device. Probably some texts or visual feedback from the screen could help explain that. Also, maybe sound could be used to notify the user since when driving the driver don't always look at the screen. The speaker could be used!
+
+> Cool idea to use the distance sensor, love how you prototyped with a cardboard to place all the buttons and the display. It was not quite clear to me where the device is going to be placed tho, would it be better to be on the wall or the vehicle? Also, it could expand to adding a sound alarm when the vehicle gets too close to the wall.
+
+
 ### Part F
 ### Record
 
@@ -387,3 +394,34 @@ Document all the prototypes and iterations you have designed and worked on! Agai
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
 
+> Code in code/parking.py
+
+After discussing with a few friends as well as using the reviews from above, a couple of similar themes emerged in the comments. Specifically the following: 
+- Try and add a sound to the device as well, this will help the user understand more than the light. However, while conversing more about the applications of the sound, an interesting point that was discussed was that the sound may have to be very loud to be practical.
+- Another point was how the device would be placed, specifically the discussion on if its more applicable for the car or on the wall. We discussed that the sensor should be placed on the wall, as even though it would be usable in certain situation, it can be customized to the garage.
+- Last piece of feedback was understanding what the encoder does, for that I decided to make a few changes to the text on the device to make it more understandable.
+
+Using these pieces of feedback there are a few changes that I decided to make to help improve the usability of the system. I played around with how these 
+changes can be made while allowing for a compact designs. Here are the changes which I decided to incorporate into the design to make it more effective. 
+First, I added a speaker to the device, which would be attached at the bottom of the device, which is invisible to the user; providing a more audio representation with the visual representation. The next
+change I incorporated is the addition of the text on the device to help with the wizarding of the device. Finally, in the usage of the device, I decided that we can
+use both the green and red lights, which will help inform the user when they are at a good distance. As the device itself has not changed since the initial sketch 
+
+> Please note: As I do not have a car, I am trialing the system using a sofa to simulate the car. 
+
+Sketch
+![](images/part2/light_design.png)
+
+The device will be attached to the wall, with the indicator placed at a height where a driver can see the indicator and have easy access to it.
+
+![](images/part2/PXL_20211026_004753517.jpg)![](images/part2/PXL_20211026_004756315.jpg)![](images/part2/PXL_20211026_004917461.jpg)![](images/part2/PXL_20211026_004933321.jpg)
+
+
+The below video shows how the device is set up and brief interaction without anyone else involved. 
+
+[![](images/video_3.png)](https://drive.google.com/file/d/15ZbZpX2sO0fpQTAbo4n0cCqCKBPpq8wo/view?usp=sharing)
+
+
+I tested out the device to show how it would act and gather some feedback, below is the video, along with a few questions
+
+[![](images/video_3.png)](https://drive.google.com/file/d/1bKAo4i23rYff9u1H4mKduVR1vvCRSpzF/view?usp=sharing)
