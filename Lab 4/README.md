@@ -405,7 +405,7 @@ Using these pieces of feedback there are a few changes that I decided to make to
 changes can be made while allowing for a compact designs. Here are the changes which I decided to incorporate into the design to make it more effective. 
 First, I added a speaker to the device, which would be attached at the bottom of the device, which is invisible to the user; providing a more audio representation with the visual representation. The next
 change I incorporated is the addition of the text on the device to help with the wizarding of the device. Finally, in the usage of the device, I decided that we can
-use both the green and red lights, which will help inform the user when they are at a good distance. As the device itself has not changed since the initial sketch 
+use both the green and red lights, which will help inform the user when they are at a good distance. The device itself has not changed since the initial sketch. 
 
 > Please note: As I do not have a car, I am trialing the system using a sofa to simulate the car. 
 
@@ -419,9 +419,8 @@ The device will be attached to the wall, with the indicator placed at a height w
 
 The below video shows how the device is set up and brief interaction without anyone else involved. 
 
-[![](images/video_3.png)](https://drive.google.com/file/d/15ZbZpX2sO0fpQTAbo4n0cCqCKBPpq8wo/view?usp=sharing)
-
+[![](images/part2/video_4_2_1.png)](https://drive.google.com/file/d/15ZbZpX2sO0fpQTAbo4n0cCqCKBPpq8wo/view?usp=sharing)
 
 I tested out the device to show how it would act and gather some feedback, below is the video, along with a few questions
 
-[![](images/video_3.png)](https://drive.google.com/file/d/1bKAo4i23rYff9u1H4mKduVR1vvCRSpzF/view?usp=sharing)
+[![](images/part2/video_4_2_2.png)](https://drive.google.com/file/d/1bKAo4i23rYff9u1H4mKduVR1vvCRSpzF/view?usp=sharing)
