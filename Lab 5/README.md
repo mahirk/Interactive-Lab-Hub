@@ -100,6 +100,31 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
 
+##### Contours
+![](part1_images/contours.png)
+
+This can be used for path planning in a 3D space, having the camera detection will help provide an outline of all potential obstacles in the way
+
+##### Face
+![](part1_images/face_detect.png)
+
+Face detection can be used to validate the identity of someone, as a front facing camera, which can help ensure it highlights a person and not random objects.
+
+
+##### Optical
+![](part1_images/flow_1.png)
+![](part1_images/flow_2.png)
+
+This could be used for traffic detection at lights to monitor cars and see if any of them cross the red light.
+
+
+##### Object
+![](part1_images/phone_detected.png)
+
+
+
+
+
 #### MediaPipe
 
 A more recent open source and efficient method of extracting information from video streams comes out of Google's [MediaPipe](https://mediapipe.dev/), which offers state of the art face, face mesh, hand pose, and body pose detection.
@@ -123,7 +148,7 @@ and install the following.
 (mpipe) pi@ixe00:~ $ pip3 install mediapipe-rpi4 pyalsaaudio
 ```
 
-Each of the installs will take a while, please be patient. After successfully installing mediapipe, connect your webcam to your Pi and use **VNC to access to your Pi**, open the terminal, and go to Lab 5 folder and run the hand pose detection script we provide:
+Each of the installations will take a while, please be patient. After successfully installing `mediapipe`, connect your webcam to your Pi and use **VNC to access to your Pi**, open the terminal, and go to Lab 5 folder and run the hand pose detection script we provide:
 (***it will not work if you use ssh from your laptop***)
 
 
@@ -135,6 +160,9 @@ Each of the installs will take a while, please be patient. After successfully in
 Try the two main features of this script: 1) pinching for percentage control, and 2) "[Quiet Coyote](https://www.youtube.com/watch?v=qsKlNVpY7zg)" for instant percentage setting. Notice how this example uses hardcoded positions and relates those positions with a desired set of events, in `hand_pose.py` lines 48-53. 
 
 **\*\*\*Consider how you might use this position based approach to create an interaction, and write how you might use it on either face, hand or body pose tracking.\*\*\***
+![](part1_images/quiet_coyote.png)
+
+You could set up this model on a camera and use it as an american sign language detector, for example where the gesture will relate to different parts of the language.
 
 (You might also consider how this notion of percentage control with hand tracking might be used in some of the physical UI you may have experimented with in the last lab, for instance in controlling a servo or rotary encoder.)
 
@@ -172,6 +200,10 @@ This might take a while to get fully installed. After installation, connect your
 
 **\*\*\*Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.\*\*\***
 
+I used the one provided by the lab, below are two images of me testing it out, with and without the mask.
+
+![](part1_images/masked.png)
+![](part1_images/no_mask.png)
 
 *Don't forget to run ```deactivate``` to end the Teachable Machines demo, and to reactivate with ```source tmachine/bin/activate``` when you want to use it again.*
 
