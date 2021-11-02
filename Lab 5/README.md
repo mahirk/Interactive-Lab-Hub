@@ -245,11 +245,21 @@ For example:
 3. When it fails, why does it fail?
 4. Based on the behavior you have seen, what other scenarios could cause problems?
 
+My intention here is that I live in a condo, and there are often people who pass my apartment every morning, including my family members, friends, and those who deliver
+any packages on a daily basis. It would be great for me to understand when someone who I recognize has come by, and allow me to get a notification that they have arrived, so I can get them
+It does fail when the pose is slightly different and can cause frustration for the user. I tested this out with my partner who was making a specific pose, however
+the pose did not hit 100% of the time. This gave me an idea to also add an indicator on the outside to tell the user when their pose has been recognized.
+
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
 2. How bad would they be impacted by a miss classification?
 3. How could change your interactive system to address this?
 4. Are there optimizations you can try to do on your sense-making algorithm.
+
+They were not aware about the uncertainties at first, but quickly learnt it as they were unable to use some capabilities. They defaulted to then knocking on the door
+which quickly reduced the overall the risk of not understanding or a mis-classification.
+I think when testing it, the best way to make change it, would be to make the positions easier and to add a recognition light, so the user knows if their pose was recognized.
+For optimizations, I can add a "train" mode, where photos for the poses can be updated. 
 
 ### Part D
 ### Characterize your own Observant system
