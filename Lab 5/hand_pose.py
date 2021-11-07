@@ -50,7 +50,8 @@ while True:
         length2 = len_calc(middleX, middleY, ringX, ringY)
         length3 = len_calc(ringX, ringY, pinkyX, pinkyY)
         length4 = len_calc(thumbX,thumbY, ringX, ringY)
-        print(length1,length2,length3)
+        print('length, length1, length2, length3, length4')
+        print(length, length1, length2, length3, length4)
         condition = length>100 and length1>100 and length2<100 and length3>100 and length4<100
         if condition:
             m.setvolume(0)
@@ -66,6 +67,7 @@ while True:
             volPer = np.interp(length, [50, 300], [0, 100])
             m.setvolume(int(vol))
 
+        print('int(length), vol')
         print(int(length), vol)
 
  
