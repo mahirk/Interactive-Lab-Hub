@@ -285,3 +285,4 @@ Video Below
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
+[![](part1_images/video_d.png)](https://drive.google.com/file/d/1dlkGAWZujwbP9HjDG5bF-IoY4BmQBc9O/view?usp=sharing)

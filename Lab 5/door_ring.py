@@ -51,7 +51,7 @@ while True:
         length3 = len_calc(ringX, ringY, pinkyX, pinkyY)
         length4 = len_calc(thumbX, thumbY, ringX, ringY)
         print(length, length1, length2, length3, length4)
-        condition = (
+        condition_arnavi = (
             length < 100
             and length1 > 100
             and length2 < 25
@@ -66,8 +66,20 @@ while True:
             and length3 < 180
             and length4 > 100
         )
-        if condition:
-            playsound("SOMEONE AT DOOR")
+
+        condition_random = (
+            length > 60 and length < 100
+            and length1 > 30 and length1 < 40
+            and length2 > 25 and length2 < 40
+            and length3 > 35 and length3 < 55
+            and length4 > 120 and length4 < 150
+        )
+        if condition_arnavi:
+            playsound("Arnavi is home!")
+            # time.sleep(1.0)
+        elif condition_random:
+            playsound("Someone is at the door")
+
 
     cTime = time.time()
     fps = 1 / (cTime - pTime)
