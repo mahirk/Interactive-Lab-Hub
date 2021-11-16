@@ -86,6 +86,12 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
 
+1. **Long-Distance Relationship Helper**: A soft-toy can be equipped with a touch sensor, pressure sensor, a light and a servo motor. These can be combined to create a toy so that when two partners are away from each other they can communicate with the softtoy via touch on one side, which can be replicated on the other side with the combination of light and servo, and a speaker.
+2. **Doorbell**: Connected with a client which is connected to an MQTT server and the pi which is connected to a camera and a touch sensor which can act like a bell. The MQTT can send the person they recognize and alert that there is someone is on the door.
+3. **Media Centre Control**: The phone can send signals to an MQTT server topic on how to control a sound system, and several connected devices can be attached to the sound system devices to control the volume. the activity etc. (With ML it can be used to train the surround sound)
+4. **Quiz**: Use the MQTT to send questions across to all the clients and receive answers and score based on the points
+5. 
+
 ### Part C
 ### Streaming a Sensor
 
@@ -107,8 +113,13 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
 
 **\*\*\*Include a picture of your setup here: what did you see on MQTT Explorer?\*\*\***
 
+![](imgs/mqtt_mk942.jpeg)
+![](imgs/mqtt_desktop_mk942.png)
+[![](imgs/mqtt_video.png)](https://drive.google.com/file/d/14Tyfb1YQWf1sOgaYM39jFEJvqmheGYa0/view?usp=sharing)
+
 **\*\*\*Pick another part in your kit and try to implement the data streaming with it.\*\*\***
 
+I chose the the gyro sensor.
 
 ### Part D
 ### The One True ColorNet
@@ -141,19 +152,35 @@ Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-
 
 **\*\*\*Can you set up the script that can read the color anyone else publish and display it on your screen?\*\*\***
 
+Yes you can. In this video, I use the MQTT to publish a message to change the color of the screen. I used the file color_screen.py for this. I changed the color to "twilight" which is (75,0,130)
+
+![](imgs/color_1.png)
+![](imgs/color_2.png)
+![](imgs/color_3.jpeg)
 
 ### Part E
 ### Make it your own
 
 Find at least one class (more are okay) partner, and design a distributed application together based on the exercise we asked you to do in this lab.
+James Parsons     jsp285 
+Victoria Zhang    cz237 
+Mahir Kothary     mk942
+
 
 **\*\*\*1. Explain your design\*\*\*** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
 
+We made a game of HORSE using the distance sensors over a distributed system. This was especially cool as two of us live off campus so it was a true distributed system. This is a common game that is played in the context of basket ball, and this proved to be a fun game that we can play remotely with a few parts.
+
 **\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
+
+Each individual pi has a distance sensor hooked up. Each pi can send distance measurements. Each pi receives, sees, and prints every distance that a player enters. The main scoring program was run on James's computer. The scoring program records and changes every player's score accordingly, which also gets published and can be seen by each individual pi. Every node on the system receives and publishes alerts to the entire system.
 
 **\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
 
+With proper signage people might understand the system. With just the distance sensor connected to a raspberry pi, and the text output, someone in the wild would be able to see the text saying "XYZ has measured a distance A and you have to get it between A and C". This will be obvious to someone who would be able to play the game.
+
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
-<!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->
+[](https://drive.google.com/file/d/1JUX0OmL4q8Xjd8NfEWf1jvws1J1kJKOh/view?usp=sharing)
 
+<!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->

@@ -47,7 +47,7 @@ def press(key):
     distance_lower_bar = round((distance * .9),3)
     distance_upper_bar = round((distance * 1.1),3)
     
-    response = (f"James measured {distance} your try must be between {distance_lower_bar} and {distance_upper_bar}")
+    response = (f"Mahir measured {distance} you try must be between {distance_lower_bar} and {distance_upper_bar}")
     
     client.publish(topic, response)
 
