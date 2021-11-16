@@ -121,8 +121,10 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
 
 I chose the gyro/acceleration sensor. This will measure how fast the raspberry pi is moving and plot it on the client as a "metric" collector. The code is found
 in [gyro_sender.py](./gyro_sender.py) and [gyro_website.py](./gyro_website.py). I had to use the flask MQTT server for this and stream using a combination of MQTT and socket.io
+![](imgs/PXL_20211116_193600434.jpeg)
+![](imgs/PXL_20211116_193658109.MP.jpg)
 
-
+[Video](https://drive.google.com/file/d/1IHbq-J_k3Gt2KKlYYoour3f61t-14C1w/view?usp=sharing)
 
 ### Part D
 ### The One True ColorNet

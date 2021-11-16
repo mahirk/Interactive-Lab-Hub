@@ -17,13 +17,13 @@ app.config['MQTT_PASSWORD'] = 'device@theFarm'
 app.config['MQTT_BROKER_PORT'] = 8883
 app.config['MQTT_TLS_ENABLED'] = True
 app.config['MQTT_TLS_INSECURE'] = True
+app.config['MQTT_KEEPALIVE'] = 1
 app.config['MQTT_TLS_CA_CERTS'] = '/etc/ssl/certs/ca-certificates.crt'
 app.config['MQTT_TLS_VERSION'] = ssl.PROTOCOL_TLS
 
 mqtt = Mqtt(app)
 socketio = SocketIO(app)
 
-acceleration = ()
 hostname = socket.gethostname()
 
 @app.route("/")
@@ -38,13 +38,10 @@ def handle_connect(client, userdata, flags, rc):
     mqtt.subscribe(topic)
     print(f"connected with result code {rc}")
 
-# this is blocking. to see other ways of dealing with the loop
-#  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
-
 @mqtt.on_message()
 def handle_message(client, userdata, message):
     acceleration = tuple(map(float, message.payload.decode().split(',')))
-    emit('pong-gps', acceleration)
+    socketio.emit('pong-gps', acceleration)
 
 
 def signal_handler(sig, frame):
@@ -54,10 +51,9 @@ def signal_handler(sig, frame):
 @socketio.on('connect')
 def test_connect():
     print('connected')
-    emit('after connect',  {'data':'Lets dance'})
+    socketio.emit('after connect',  {'data':'Lets dance'})
 
 signal.signal(signal.SIGINT, signal_handler)
-
 
 if __name__ == "__main__":
     socketio.run(app, host='0.0.0.0', port=5000)
