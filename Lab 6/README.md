@@ -89,8 +89,8 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 1. **Long-Distance Relationship Helper**: A soft-toy can be equipped with a touch sensor, pressure sensor, a light and a servo motor. These can be combined to create a toy so that when two partners are away from each other they can communicate with the softtoy via touch on one side, which can be replicated on the other side with the combination of light and servo, and a speaker.
 2. **Doorbell**: Connected with a client which is connected to an MQTT server and the pi which is connected to a camera and a touch sensor which can act like a bell. The MQTT can send the person they recognize and alert that there is someone is on the door.
 3. **Media Centre Control**: The phone can send signals to an MQTT server topic on how to control a sound system, and several connected devices can be attached to the sound system devices to control the volume. the activity etc. (With ML it can be used to train the surround sound)
-4. **Quiz**: Use the MQTT to send questions across to all the clients and receive answers and score based on the points
-5. 
+4. **Quiz**: Use the MQTT to send questions across to all the clients and receive answers and score based on the points of questions answered correct. This can also be used in a classroom setting to encourage participation.
+5.  Monitoring: This can also be used for mo
 
 ### Part C
 ### Streaming a Sensor
@@ -119,7 +119,10 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
 
 **\*\*\*Pick another part in your kit and try to implement the data streaming with it.\*\*\***
 
-I chose the the gyro sensor.
+I chose the gyro/acceleration sensor. This will measure how fast the raspberry pi is moving and plot it on the client as a "metric" collector. The code is found
+in [gyro_sender.py](./gyro_sender.py) and [gyro_website.py](./gyro_website.py). I had to use the flask MQTT server for this and stream using a combination of MQTT and socket.io
+
+
 
 ### Part D
 ### The One True ColorNet
@@ -181,6 +184,6 @@ With proper signage people might understand the system. With just the distance s
 
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
-[](https://drive.google.com/file/d/1JUX0OmL4q8Xjd8NfEWf1jvws1J1kJKOh/view?usp=sharing)
+![![](imgs/final_video.png)](https://drive.google.com/file/d/1JUX0OmL4q8Xjd8NfEWf1jvws1J1kJKOh/view?usp=sharing)
 
 <!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->
